@@ -37,6 +37,8 @@ type mqueue, fs_type;
 type fuse, sdcard_type, fs_type, mlstrustedobject;
 type sdcardfs, sdcard_type, fs_type, mlstrustedobject;
 type vfat, sdcard_type, fs_type, mlstrustedobject;
+type exfat, sdcard_type, fs_type, mlstrustedobject;
+type ufsd, sdcard_type, fs_type, mlstrustedobject;
 ifelse(shipping_build, `true',
   # Dummy this out in shipping to avoid breaking code mentioning the label
   `typealias vfat alias sdcard_posix;'
@@ -45,6 +47,7 @@ ifelse(shipping_build, `true',
 )
 typealias fuse alias sdcard_internal;
 typealias vfat alias sdcard_external;
+#typealias exfat alias sdcard_external;
 type debugfs, fs_type, mlstrustedobject;
 type pstorefs, fs_type;
 type functionfs, fs_type;
